@@ -1,25 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ButtonScreen from './screens/ButtonScreen';
-const Stack=createStackNavigator();
+import MenuScreen from './screens/MenuScreen';
+
+
+const Stack = createStackNavigator();
+
 
 export default function App() {
   return (
-   <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={ButtonScreen}></Stack.Screen>
-    </Stack.Navigator>
-   </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Menu"
+        screenOptions={{
+          headerTitle: 'APP',
+        }}
+      >
+        <Stack.Screen name="Menu" component={MenuScreen} />
+        <Stack.Screen name="ButtonScreen" component={ButtonScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+

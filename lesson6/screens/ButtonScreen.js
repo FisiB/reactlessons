@@ -33,6 +33,12 @@ const styles=StyleSheet.create({
         paddingVertical:20,
         borderRadius:6,
         marginHorizontal:20
+    },
+    btnText:{
+        color:'white',
+        textAlign:'center',
+        fontSize:25,
+        fontWeight:'bold'
     }
 });
 
